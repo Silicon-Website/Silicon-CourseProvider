@@ -13,7 +13,7 @@ namespace CourseProvider.Functions
 
 
         [Function("Playground")]
-        public async Task <HttpResponseData> Run([HttpTrigger(AuthorizationLevel.Function, "get", Route = "graphql")] HttpRequestData req)
+        public async Task <HttpResponseData> Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "graphql")] HttpRequestData req)
         {
             var response = req.CreateResponse();
             response.Headers.Add("Content-Type", "text/html; charset=utf-8");
